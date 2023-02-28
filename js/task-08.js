@@ -7,6 +7,7 @@ formEl.addEventListener('submit', (event) => {
     inputEls.forEach((input) => {
         if (input.value === '') {
             alert('Будь ласка, заповніть усі поля');
+            return;
         }
     })
     
@@ -20,5 +21,8 @@ formEl.addEventListener('submit', (event) => {
 
     console.log(formData);
 
-    event.currentTarget.reset();
+    if (email !== '' && password !== '') {
+        event.currentTarget.reset();
+    }
+
 })
